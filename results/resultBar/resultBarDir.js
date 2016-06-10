@@ -2,18 +2,20 @@ angular.module('gameApp')
 .directive( 'resultBarDir', function(){
 	
 	return{
-		scope:{
-			results: '='
-		},
 		templateUrl: './results/resultBar/resultBar.html',
-		controller: function( $scope, $firebaseArray, fb, resultsSrv, $q ){
+		controller: function( $scope, $firebaseArray, fb, resultsSrv){
 			var questions = $firebaseArray( fb.questionsRef );
 			var answers = $firebaseArray( fb.answersRef );
 
-			$scope.randomResults = resultsSrv.getData(questions, answers).then(function(response){
-				resultsSrv.randomObj(response);
-			})
-
+			var getRandomRes = function(){
+				return resultsSrv.getData(questions, answers)
+					.then(function(response){
+						return resultsSrv.randomObj(response);
+					})
+			};
+			getRandomRes().then(function(response){
+				$scope.results = response;
+			});
 			
 
 			

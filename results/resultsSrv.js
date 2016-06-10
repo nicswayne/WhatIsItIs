@@ -44,7 +44,26 @@ angular.module('gameApp')
 		return newArr;
 	}
 	this.randomObj = function( obj ){
-		console.log(obj);
+		resultsObj = [];
+		function randomize( arr ){
+			newArr = [];
+			while(newArr.length !== arr.length){
+				randomIndex = Math.floor(Math.random() * arr.length);
+				if(newArr.indexOf(arr[randomIndex].$value) === -1){
+					newArr.push(arr[randomIndex].$value);
+				}
+			}
+			return newArr;
+		}
+		var questions = randomize(obj.questions);
+		var answers = randomize(obj.answers);
+		for (var i = 0; i < answers.length; i++) {
+			results = {};
+			results.answer = answers[i];
+			results.question = questions[i];
+			resultsObj.push(results);
+		}
+		return resultsObj;
 	}
 
 })
