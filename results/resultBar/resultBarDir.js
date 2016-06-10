@@ -3,13 +3,18 @@ angular.module('gameApp')
 	
 	return{
 		scope:{
-			question: '=',
-			answer: '='
+			results: '='
 		},
 		templateUrl: './results/resultBar/resultBar.html',
-		controller: function( $scope){
-			$scope.question = $scope.question.$value;
-			console.log("$id", $scope.question.$value);
+		controller: function( $scope, $firebaseArray, fb, resultsSrv, $q ){
+			var questions = $firebaseArray( fb.questionsRef );
+			var answers = $firebaseArray( fb.answersRef );
+
+			$scope.randomResults = resultsSrv.getData(questions, answers).then(function(response){
+				resultsSrv.randomObj(response);
+			})
+
+			
 
 			
 		}
