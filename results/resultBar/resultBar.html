@@ -1,7 +1,15 @@
+<button ng-click="showResults = !showResults" class="submit-btn">Show All</button>
+<div ng-repeat="result in results track by $index" ng-show="showResults">
+	<h2>What is {{result.question}}?</h2>
 
-<div ng-repeat="result in results">
-	What is {{result.question}}?
+	<h2>It is  {{result.answer}}</h2>
+<span><button ng-click="saveFavorite(results, $index)" class="submit-btn">Save as Favorite</button></span>
+</div>
+<div>
+	<h2>What is {{currentResult.question}}?</h2>
 
-	It is  {{result.answer}}
-
+	<h2>It is {{currentResult.answer}}</h2>
+	<span><button ng-click="showPrev()" class="submit-btn">Previous</button></span>
+	<span><button ng-click="showNext()" class="submit-btn">Next</button></span>
+	<span><button ng-click="saveCurrent()" class="submit-btn">Save as Favorite</button></span>
 </div>

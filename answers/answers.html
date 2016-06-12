@@ -1,5 +1,5 @@
 <div>
-
+	<h1>You're current game is: {{gameName}}</h1>
 	<h2>Write 5 answers</h2>
 	<div>
 		<h3>It is: <input type="text" ng-model="answers.first" placeholder="answer 1"></h3>
@@ -18,7 +18,7 @@
 	</div>
 
 	<div>
-		<a ui-sref="results" class="submit-btn" ng-click="addAnswers( answers )"><h2>Submit</h2></a>
+		<a ui-sref="results({id: gameName})" class="submit-btn" ng-click="addAnswers( answers )"><h2>Submit</h2></a>
 	</div>
 
 </div>

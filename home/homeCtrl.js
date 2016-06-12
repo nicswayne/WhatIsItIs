@@ -1,10 +1,14 @@
 angular.module('gameApp')
 .controller( 'homeCtrl', function( $scope, $firebaseArray, fb){
 	
-	var users = $firebaseArray( fb.usersRef );
+	$scope.games = $firebaseArray( fb.gamesRef );
 
-	$scope.addUser = function( userObj ){
-		users.$add( userObj );
+	$scope.addGame = function( gameObj ){
+		var gameName = new Firebase( fb.gamesRef + "/" + gameObj );
+		var gameNameUrl = $firebaseArray( gameName );
+		gameNameUrl.$add( gameObj );
+		$scope.game = gameObj;
 	}
+
 	
 })

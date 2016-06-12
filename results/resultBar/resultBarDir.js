@@ -4,21 +4,13 @@ angular.module('gameApp')
 	return{
 		templateUrl: './results/resultBar/resultBar.html',
 		controller: function( $scope, $firebaseArray, fb, resultsSrv){
-			var questions = $firebaseArray( fb.questionsRef );
-			var answers = $firebaseArray( fb.answersRef );
-
-			var getRandomRes = function(){
-				return resultsSrv.getData(questions, answers)
-					.then(function(response){
-						return resultsSrv.randomObj(response);
-					})
-			};
-			getRandomRes().then(function(response){
-				$scope.results = response;
-			});
-			
-
-			
+			$scope.showResults = false;
+			$scope.saveFavorite = function( obj, idx ){		
+				console.log(obj[idx]);
+			}
+			$scope.saveCurrent = function(){
+				console.log( $scope.currentResult );
+			}
 		}
 	}
 })

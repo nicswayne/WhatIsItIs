@@ -1,7 +1,7 @@
 angular.module('gameApp', [ 'ui.router', 'firebase'])
 .config(function( $stateProvider, $urlRouterProvider) {
 
-	$urlRouterProvider.otherwise( 'home' );
+	$urlRouterProvider.otherwise( 'login' );
 
 	$stateProvider
 		.state( 'home', {
@@ -15,26 +15,25 @@ angular.module('gameApp', [ 'ui.router', 'firebase'])
 			controller: 'loginCtrl'
 		})
 		.state( 'questions', {
-			url: '/whatis',
+			url: '/whatis/:id',
 			templateUrl: './questions/questions.html',
 			controller: 'questionsCtrl'
 		})
 		.state( 'answers', {
-			url: '/itis',
+			url: '/itis/:id',
 			templateUrl: './answers/answers.html',
 			controller: 'answersCtrl'
 		})
 		.state( 'results', {
-			url: '/results',
+			url: '/results/:id',
 			templateUrl: './results/results.html',
 			controller: 'resultsCtrl'
 		})
 	
 })
 .constant( 'fb', {
-	questionsRef: new Firebase('https://blazing-heat-3287.firebaseio.com/room1/questions'),
-	answersRef: new Firebase('https://blazing-heat-3287.firebaseio.com/room1/answers'),
-	usersRef: new Firebase('https://blazing-heat-3287.firebaseio.com/users')
+	gamesRef: new Firebase('https://blazing-heat-3287.firebaseio.com/games'),
+	urlRef: new Firebase('https://blazing-heat-3287.firebaseio.com/')
 
 
 });
