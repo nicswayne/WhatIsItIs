@@ -1,9 +1,9 @@
 <div class="container-flux">
 	<div class="container">
 		<div class="container col-md-11 margin-left result-card small-margin">
-			<h3>What is {{currentResult.question}}?</h3>
+			<h2>What is {{currentResult.question}}?</h2>
 
-			<h3>It is {{currentResult.answer}}</h3>
+			<h2>It is {{currentResult.answer}}</h2>
 			<span><button ng-click="showPrev()" class="submit-btn">Previous</button></span>
 			<span><button ng-click="showNext()" class="submit-btn">Next</button></span>
 			<span><button ng-click="saveCurrent()" class="submit-btn">Save as Favorite</button></span>
@@ -17,9 +17,9 @@
 				<nav-bar-dir></nav-bar-dir>
 			</div>
 				<div class="container col-md-12 overflow" ng-repeat="result in results track by $index" ng-show="showResults">
-					<span><h3>What is {{result.question}}?</h3>
+					<span><h2>What is {{result.question}}?</h2>
 
-					<h3>It is  {{result.answer}}</h3></span>
+					<h2>It is  {{result.answer}}</h2></span>
 					<span><button ng-click="saveFavorite(results, $index)" class="submit-btn">Save as Favorite</button></span>
 				</div>
 			</div>

@@ -1,24 +1,26 @@
 <div class="top-margin">
 	<h1>You're current game is: {{gameName}}</h1>
 </div>
-<div class="big-card container small-margin">
-	<h2>Write 5 answers</h2>
-	<div>
-		<h3>It is: <input class="large-font" type="text" ng-model="answers.first" placeholder="answer 1"></h3>
+<form>
+	<div class="big-card container small-margin">
+		<h2>Write 5 answers</h2>
+		<div>
+			<h3>It is: <input class="large-font" type="text" ng-model="answers.first" placeholder="answer 1" ng-required="true"></h3>
+		</div>
+		<div>
+			<h3>It is: <input class="large-font" type="text" ng-model="answers.second" placeholder="answer 2" ng-required="true"></h3>
+		</div>
+		<div>
+			<h3>It is: <input class="large-font" type="text" ng-model="answers.third" placeholder="answer 3" ng-required="true"></h3>
+		</div>
+		<div>
+			<h3>It is: <input class="large-font" type="text" ng-model="answers.fourth" placeholder="answer 4" ng-required="true"></h3>
+		</div>
+		<div>
+			<h3>It is: <input class="large-font" type="text" ng-model="answers.fifth" placeholder="answer 5" ng-required="true"></h3>
+		</div>
 	</div>
 	<div>
-		<h3>It is: <input class="large-font" type="text" ng-model="answers.second" placeholder="answer 2"></h3>
+		<button type="submit" class="submit-btn" ng-click="addAnswers( answers )"><h2>Submit</h2></button>
 	</div>
-	<div>
-		<h3>It is: <input class="large-font" type="text" ng-model="answers.third" placeholder="answer 3"></h3>
-	</div>
-	<div>
-		<h3>It is: <input class="large-font" type="text" ng-model="answers.fourth" placeholder="answer 4"></h3>
-	</div>
-	<div>
-		<h3>It is: <input class="large-font" type="text" ng-model="answers.fifth" placeholder="answer 5"></h3>
-	</div>
-</div>
-	<div>
-		<a ui-sref="results({id: gameName})" class="submit-btn" ng-click="addAnswers( answers )"><h2>Submit</h2></a>
-	</div>
+</form>
