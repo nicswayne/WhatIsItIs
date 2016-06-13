@@ -9,6 +9,5 @@ angular.module('gameApp')
 		gameNameUrl.$add( gameObj );
 		$scope.game = gameObj;
 	}
-
 	
 })

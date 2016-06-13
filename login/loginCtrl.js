@@ -27,6 +27,14 @@ angular.module('gameApp')
 	  		}
 		})
 	};
-
+	$scope.loginGuest = function(){
+		fb.urlRef.authAnonymously(function(error, authData){
+			if (error){
+				console.log( "error", error );
+			}
+		}, {
+				remember: "sessionOnly"
+			});
+	}
 	
 })

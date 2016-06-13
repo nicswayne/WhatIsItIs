@@ -1,4 +1,4 @@
-angular.module('gameApp', [ 'ui.router', 'firebase', 'ngMaterial'])
+angular.module('gameApp', [ 'ui.router', 'firebase'])
 .config(function( $stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise( 'login' );

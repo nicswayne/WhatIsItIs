@@ -1,11 +1,14 @@
-<button ng-click="showResults = !showResults" class="submit-btn">Show All</button>
-<div ng-repeat="result in results track by $index" ng-show="showResults">
-	<h2>What is {{result.question}}?</h2>
+<div class="navbar">
+	<nav-bar-dir></nav-bar-dir>
+	<button ng-click="change()" class="submit-btn">{{word}} Results</button>
+	<div ng-repeat="result in results track by $index" ng-show="showResults">
+		<h2>What is {{result.question}}?</h2>
 
-	<h2>It is  {{result.answer}}</h2>
-<span><button ng-click="saveFavorite(results, $index)" class="submit-btn">Save as Favorite</button></span>
+		<h2>It is  {{result.answer}}</h2>
+		<span><button ng-click="saveFavorite(results, $index)" class="submit-btn">Save as Favorite</button></span>
+	</div>
 </div>
-<div>
+<div class="container result-card small-margin">
 	<h2>What is {{currentResult.question}}?</h2>
 
 	<h2>It is {{currentResult.answer}}</h2>

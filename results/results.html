@@ -1,9 +1,9 @@
 <div>
-	<nav-bar-dir></nav-bar-dir>
 	<h1>You're current game is: {{gameName}}</h1>
 	<result-bar-dir></result-bar-dir>
 
-	<div>
-		<a ui-sref="questions({id: gameName})" class="btn-big-red"><h3>Play Again!</h3></a>
+	<div class="container small-margin">
+		<a ui-sref="questions({id: gameName})" ng-click="clearResults()" class="btn-big-red margin-right"><h3 class="centered">Start Over!</h3></a>
+		<a ui-sref="home" ng-click="clearGame()" class="btn-big-red margin-left"><h3 class="centered">End Game!</h3></a>
 	</div>
 </div>

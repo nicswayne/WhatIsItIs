@@ -5,6 +5,16 @@ angular.module('gameApp')
 		templateUrl: './results/resultBar/resultBar.html',
 		controller: function( $scope, $firebaseArray, fb, resultsSrv){
 			$scope.showResults = false;
+			$scope.word = "Show";
+			$scope.change = function(){
+				$scope.showResults = !$scope.showResults;
+				if ($scope.showResults === false){
+					$scope.word = "Show";
+				} else {
+					$scope.word = "Hide";
+				}
+			}
+
 			$scope.saveFavorite = function( obj, idx ){
 				var userUrl = new Firebase( fb.urlRef + "/users/" + resultsSrv.userId + "/favorites" );
 				var users = $firebaseArray( userUrl );		
@@ -15,7 +25,6 @@ angular.module('gameApp')
 				var users = $firebaseArray( userUrl );		
 				users.$add( $scope.currentResult );
 			}
-			console.log("results", resultsSrv.userId);
 		}
 	}
 })

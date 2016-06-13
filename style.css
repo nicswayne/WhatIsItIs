@@ -1,8 +1,16 @@
+.big-card{
+  height: 40vh;
+  overflow: scroll;
+}
 body {
   background: black;
   color: white; 
   text-align: center;
   -webkit-transform: translateZ(0);
+}
+.border, .card, .big-card, .result-card{
+  border: 7px solid white;
+  border-radius: 20px;
 }
 .btn-big-red{
 	border-radius: 100%;
@@ -23,7 +31,7 @@ body {
   position: relative;
   text-align: center;
   text-shadow: 0 5px 1px rgba(0, 0, 0, 0.5);
-  text-decoration: none;
+  text-decoration: none !important;
   top: 0;
   width: 186px;
   -moz-transition: 0.15s;
@@ -35,6 +43,7 @@ body {
   background-color: #D13902;
   box-shadow: 0 0 0 1px #C63702 inset, 0 0 0 4px rgba(255, 255, 255, 0.15) inset, 0 20px 0 0 #AD3002, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
   top: -2px;
+  color: white;
 }
 .btn-big-red:active, .submit-btn:active {
   box-shadow: 0 0 0 1px #AD3002 inset, 0 0 0 4px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
@@ -44,12 +53,41 @@ body {
   transform: translateY(10px);
 }
 .centered{
-	height: 100vh;
-	line-height: 100vh;
-	margin: auto;
+	line-height: 125px;
+}
+.card{
+    height: 20vh;
+}
+.card, .big-card, .result-card{
+  background: url("./img/sky.jpg") no-repeat;
+}
+.justify-right{
+  text-align: right;
+}
+.large-font{
+  color: black;
+  font-size: 20px;
+}
+.margin-left{
+  margin-left: 2%;
+}
+.margin-right{
+  margin-right: 2%;
+}
+.result-card{
+  height: 28vh;
+}
+.small-margin{
+  margin-top: 3%;
 }
 .submit-btn{
 	border-radius: 6px;
 	height: 61px;
 	line-height: 7px;
+}
+.top-margin{
+  margin-top: 12%;
+}
+.top-padding{
+  padding-top: 3.5%;
 }

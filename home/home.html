@@ -1,18 +1,21 @@
-<!-- <profile-dir></profile-dir> -->
 
-<div> <!-- class='centered' -->
+<div class="container card top-margin"> <!-- class='centered' -->
 	
-	<h3>Create a Game!</h3> <input type="text" ng-model="gameName" placeholder="group name">
-	<a ui-sref="questions({id: gameName})" class="submit-btn" ng-click="addGame( gameName )"><h3>Add Game</h3></a>
+	<h3>Create a Game!</h3> <input class="large-font" type="text" ng-model="gameName" placeholder="Group Name">
+	<a ui-sref="questions({id: gameName})" class="submit-btn" ng-click="addGame( gameName )"><h3>Create Game</h3></a>
 </div>
-<div>
+<div class="container big-card small-margin">
 	<h3>Join a Game!</h3>
-	<div ng-repeat="game in games track by $index">
-		<div><span><h3>{{game.$id}}</h3></span><span><a ui-sref="questions({id: games[$index].$id})" class="submit-btn"><h3>Join Game</h3></a></span></div>
-
+	<input class="large-font" type="text" placeholder="Search for a Game" ng-model="name">
+	<div class="container" ng-repeat="game in games | filter: name track by $index">
+		<div class="container col-md-3 col-md-offset-2 justify-right border small-margin">
+			<h3>{{game.$id}}</h3>
+		</div>
+		<div class="container col-md-3">
+			<a ui-sref="questions({id: games[$index].$id})" class="submit-btn"><h3>Join Game</h3></a>
+			<br>
+		</div>
 	</div>
-<!-- </div>
-	<a ui-sref="questions" class="btn-big-red" ng-click="addGame( gameName )"><h2>Play</h2></a>
-	
+
 </div>
- -->
+

@@ -14,7 +14,6 @@ angular.module('gameApp')
 		.then(function(response){
 			$scope.results = response;
 			$scope.currentResult = $scope.results[idx];
-			console.log($scope.results);
 		})
 	$scope.showNext = function(){
 		if(idx < $scope.results.length -1){
@@ -33,6 +32,16 @@ angular.module('gameApp')
 		$scope.currentResult = $scope.results[idx];
 	}
 	$scope.gameName = $stateParams.id;
+
+	$scope.clearResults = function(){
+		questionsUrl.remove();
+		answersUrl.remove();
+	}
+
+	$scope.clearGame = function(){
+		var gameUrl = new Firebase( fb.gamesRef + "/" + $stateParams.id );
+		gameUrl.remove();
+	}
 
 
 })
