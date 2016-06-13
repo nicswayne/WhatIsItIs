@@ -6,9 +6,11 @@
 }
 body {
   background: black;
-  color: white; 
   text-align: center;
   -webkit-transform: translateZ(0);
+}
+body, .white{
+  color: white; 
 }
 .bottom-margin{
   margin-bottom: 2%;
@@ -63,7 +65,7 @@ body {
 .card{
     height: 20vh;
 }
-.card, .big-card, .result-card, .thin-card{
+.card, .big-card, .result-card, .thin-card, .navbar{
   background: url("./img/sky.jpg") no-repeat;
 }
 .height-fix{
@@ -71,8 +73,10 @@ body {
 }
 img{
   height: 70px;
+  border: 2px solid white;
+  border-bottom: 0px;
   border-radius: 5px;
-  margin-top: 10px;
+  margin: 0px;
 }
 .justify-right{
   text-align: right;
@@ -86,6 +90,9 @@ img{
 }
 .margin-right{
   margin-right: 2%;
+}
+.navbar{
+  border-bottom: 4px solid white;
 }
 .result-card{
   height: 28vh;
@@ -101,6 +108,9 @@ img{
 .thin-card{
   min-height: 15vh;
   overflow: scroll;
+}
+.tiny-margin{
+  margin-top: 10px;
 }
 .top-margin{
   margin-top: 12%;

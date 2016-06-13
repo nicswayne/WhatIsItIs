@@ -44,9 +44,6 @@ angular.module('gameApp')
 			})
 		return result.promise;
 	}
-	this.getUser = function(){
-		return this.userInfo;
-	}
 
 	this.makeArr = function( arr ){
 		var newArr = [];
