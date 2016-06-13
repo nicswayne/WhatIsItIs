@@ -1,0 +1,32 @@
+<div>
+	<profile-dir></profile-dir>
+</div>
+<div class="top-margin">
+	<h1>Your current game is: {{gameName}}</h1>
+</div>
+<form>
+	<div class="big-card container small-margin">
+		<h2>Write 5 questions</h2>
+		<div>
+			<h3>What is: <input class="large-font" type="text" ng-model="questions.first" placeholder="question 1" ng-required="true" /></h3>
+		</div>
+		<div>
+			<h3>What is: <input class="large-font" type="text" ng-model="questions.second" placeholder="question 2" ng-required="true" /></h3>
+		</div>
+		<div>
+			<h3>What is: <input class="large-font" type="text" ng-model="questions.third" placeholder="question 3" ng-required="true" /></h3>
+		</div>
+		<div>
+			<h3>What is: <input class="large-font" type="text" ng-model="questions.fourth" placeholder="question 4" ng-required="true" /></h3>
+		</div>
+		<div>
+			<h3>What is: <input class="large-font" type="text" ng-model="questions.fifth" placeholder="question 5" ng-required="true" /></h3>
+		</div>
+	</div>
+		<div>
+			<a type="submit"  class="submit-btn" ng-click="addQuestions( questions )"><h2>Submit</h2></a>
+		</div>
+
+</form>
+
+
