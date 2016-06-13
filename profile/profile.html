@@ -1,21 +1,22 @@
- <md-fab-toolbar md-open="isOpen" count="demo.count" md-direction="{{demo.selectedDirection}}">
-    <md-fab-trigger class="align-with-text">
-      <md-button aria-label="menu" class="md-fab md-primary">
-        <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
-      </md-button>
-    </md-fab-trigger>
+<nav class="navbar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
 
-    <md-toolbar>
-      <md-fab-actions class="md-toolbar-tools">
-        <md-button aria-label="comment" class="md-icon-button">
-          <md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
-        </md-button>
-        <md-button aria-label="label" class="md-icon-button">
-          <md-icon md-svg-src="img/icons/ic_label_24px.svg"></md-icon>
-        </md-button>
-        <md-button aria-label="photo" class="md-icon-button">
-          <md-icon md-svg-src="img/icons/ic_photo_24px.svg"></md-icon>
-        </md-button>
-      </md-fab-actions>
-    </md-toolbar>
-  </md-fab-toolbar>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="icon-bar">
+      <ul class="nav navbar-nav">
+        <li><h3>Welcome {{userInfo.given_name}}</h3></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="nav navbar-nav margin-left">
+        <li><img ng-src="{{userInfo.picture}}"></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" ng-click="logout()">Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

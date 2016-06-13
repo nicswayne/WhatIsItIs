@@ -1,7 +1,7 @@
 angular.module('gameApp')
 .service( 'resultsSrv', function( $q ){
 	
-	this.userId = 'google:107434251455566307361';
+	this.userInfo = {};
 
 	this.combine = function(quest, ans){
 		var result = [];
@@ -11,7 +11,6 @@ angular.module('gameApp')
 			obj.answer = ans[i];
 			result.push(obj);
 		}
-		// console.log("service", ans);
 		return result;
 	}
 	this.getData = function(questions, answers){
@@ -44,6 +43,9 @@ angular.module('gameApp')
 				result.resolve(favResp);
 			})
 		return result.promise;
+	}
+	this.getUser = function(){
+		return this.userInfo;
 	}
 
 	this.makeArr = function( arr ){

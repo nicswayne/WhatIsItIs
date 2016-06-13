@@ -1,6 +1,6 @@
 angular.module('gameApp')
 .controller( 'loginCtrl', function( $scope, fb, resultsSrv ){
-	
+
 	$scope.login = function (){
 		fb.urlRef.authWithOAuthPopup("google", function(error, authData) {
 	  		if (error) {
@@ -23,7 +23,8 @@ angular.module('gameApp')
       				firstName: authData.google.cachedUserProfile.given_name,
       				imgUrl: authData.google.cachedUserProfile.picture,
     			});
-    			resultsSrv.userId = authData.uid;
+    			resultsSrv.userInfo = authData.google.cachedUserProfile;
+    			console.log("login", resultsSrv.userInfo);
 	  		}
 		})
 	};
