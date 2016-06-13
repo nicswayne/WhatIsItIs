@@ -1,7 +1,7 @@
 angular.module('gameApp')
 .service( 'resultsSrv', function( $q ){
 	
-	this.userId = {},
+	this.userId = 'google:107434251455566307361';
 
 	this.combine = function(quest, ans){
 		var result = [];
@@ -37,6 +37,14 @@ angular.module('gameApp')
 				})
 				return allResults.promise;
 			}
+	this.getFavs = function( fbArr ){
+		var result = $q.defer();
+		fbArr.$loaded()
+			.then(function(favResp){
+				result.resolve(favResp);
+			})
+		return result.promise;
+	}
 
 	this.makeArr = function( arr ){
 		var newArr = [];

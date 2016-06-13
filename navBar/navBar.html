@@ -1,0 +1,7 @@
+<button ng-click="showFavorites = !showFavorites" class="submit-btn">My Favorites</button>
+<div ng-repeat="favorite in favorites track by $index" ng-show="showFavorites">
+	<h2>What is {{favorite.question}}?</h2>
+
+	<h2>It is  {{favorite.answer}}</h2>
+<span><button ng-click="favorites.$remove(favorite)" class="submit-btn">Remove</button></span>
+</div>
