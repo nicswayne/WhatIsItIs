@@ -1,5 +1,7 @@
 .big-card{
   height: 40vh;
+}
+.big-card, .thin-card, .overflow{
   overflow: scroll;
 }
 body {
@@ -8,7 +10,10 @@ body {
   text-align: center;
   -webkit-transform: translateZ(0);
 }
-.border, .card, .big-card, .result-card{
+.bottom-margin{
+  margin-bottom: 2%;
+}
+.border, .card, .big-card, .result-card, .thin-card{
   border: 7px solid white;
   border-radius: 20px;
 }
@@ -58,8 +63,11 @@ body {
 .card{
     height: 20vh;
 }
-.card, .big-card, .result-card{
+.card, .big-card, .result-card, .thin-card{
   background: url("./img/sky.jpg") no-repeat;
+}
+.height-fix{
+  height: 200px;
 }
 .justify-right{
   text-align: right;
@@ -84,6 +92,10 @@ body {
 	border-radius: 6px;
 	height: 61px;
 	line-height: 7px;
+}
+.thin-card{
+  min-height: 15vh;
+  overflow: scroll;
 }
 .top-margin{
   margin-top: 12%;
