@@ -1,5 +1,5 @@
 angular.module('gameApp')
-.controller( 'loginCtrl', function( $scope, fb ){
+.controller( 'loginCtrl', function( $scope, fb, resultsSrv ){
 	
 	$scope.login = function (){
 		fb.urlRef.authWithOAuthPopup("google", function(error, authData) {
@@ -21,10 +21,12 @@ angular.module('gameApp')
 	   			fb.urlRef.child("users").child(authData.uid).set({
       				provider: authData.provider,
       				firstName: authData.google.cachedUserProfile.given_name,
-      				imgUrl: authData.google.cachedUserProfile.picture
+      				imgUrl: authData.google.cachedUserProfile.picture,
     			});
+    			resultsSrv.userId = authData.uid;
 	  		}
 		})
 	};
+
 	
 })

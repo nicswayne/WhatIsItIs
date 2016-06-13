@@ -1,6 +1,8 @@
 angular.module('gameApp')
 .service( 'resultsSrv', function( $q ){
 	
+	this.userId = {},
+
 	this.combine = function(quest, ans){
 		var result = [];
 		for (var i = 0; i < quest.length; i++) {
