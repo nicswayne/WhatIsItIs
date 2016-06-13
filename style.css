@@ -63,7 +63,7 @@ body, .white{
 	line-height: 125px;
 }
 .card{
-    height: 20vh;
+    height: 25vh;
 }
 .card, .big-card, .result-card, .thin-card, .navbar{
   background: url("./img/sky.jpg") no-repeat;
