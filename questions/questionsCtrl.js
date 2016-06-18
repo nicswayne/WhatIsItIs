@@ -1,5 +1,5 @@
 angular.module('gameApp')
-    .controller('questionsCtrl', function($scope, questionsSrv, $firebaseArray, fb, $stateParams, $state) {
+    .controller('questionsCtrl', function($scope, $firebaseArray, fb, $stateParams, $state) {
 
         var questions = new Firebase(fb.gamesRef + "/" + $stateParams.id + '/questions');
         var questionsUrl = $firebaseArray(questions);
