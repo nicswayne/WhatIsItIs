@@ -17,7 +17,9 @@ angular.module('gameApp')
 
 			$scope.saveFavorite = function( obj, idx ){
 				var userUrl = new Firebase( fb.urlRef + "/users/" + resultsSrv.userId + "/favorites" );
-				var users = $firebaseArray( userUrl );		
+				var users = $firebaseArray( userUrl );
+				console.log("ID", resultsSrv.userId );
+				console.log("info", resultsSrv.userInfo);		
 				users.$add(obj[idx]);
 			}
 			$scope.saveCurrent = function(){

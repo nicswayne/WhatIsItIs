@@ -24,6 +24,7 @@ angular.module('gameApp')
       				imgUrl: authData.google.cachedUserProfile.picture,
     			});
     			resultsSrv.userInfo = authData.google.cachedUserProfile;
+    			resultsSrv.userId = authData.uid;
     			$state.go('home');
 	  		}
 		})
