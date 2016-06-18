@@ -25,7 +25,6 @@ angular.module('gameApp')
     			});
     			resultsSrv.userInfo = authData.google.cachedUserProfile;
     			$state.go('home');
-    			console.log("login", resultsSrv.userInfo);
 	  		}
 		})
 	};
@@ -34,6 +33,7 @@ angular.module('gameApp')
 			if (error){
 				console.log( "error", error );
 			}
+			$state.go( 'home' );
 		}, {
 				remember: "sessionOnly"
 			});
